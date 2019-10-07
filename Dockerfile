@@ -5,9 +5,9 @@ COPY package*.json ./
 RUN npm install
 # Bundle app source
 COPY . .
-npm run build
+RUN npm run build
 COPY . .
-pip install -e .
+RUN pip install -e .
 COPY . .
 CMD [ "python", "-m", "paperboy"]
 EXPOSE 8080
